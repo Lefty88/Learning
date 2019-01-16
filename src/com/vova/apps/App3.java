@@ -21,7 +21,7 @@ public class App3 {
      * @return sorted string
      */
     public static String sort(String seqToSort) {
-        char[] A = seqToSort.toCharArray();
+        char[] A = seqToSort.toCharArray(); // переменные нужно писать с маленькой буквы
 
         for (int j = 1; j < A.length; j++) {
             char key = A[j];
