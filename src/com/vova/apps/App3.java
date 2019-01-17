@@ -8,8 +8,10 @@ public class App3 {
 
         System.out.println("Enter a sequence of numbers");
         String seq = input.nextLine();
+        System.out.println("Descending order?");
+        boolean descending = input.nextBoolean();
 
-        String result = sort(seq);
+        String result = sort(seq, descending);
 
         System.out.print(result);
     }
@@ -20,23 +22,30 @@ public class App3 {
      * @param seqToSort sequence to sort
      * @return sorted string
      */
-    public static String sort(String seqToSort) {
-        char[] A = seqToSort.toCharArray(); // переменные нужно писать с маленькой буквы
-
-        for (int j = 1; j < A.length; j++) {
-            char key = A[j];
-            int i = j - 1;
-            while (i >= 0 && A[i] < key) {
-                A[i + 1] = A[i];
-                i = i - 1;
+    public static String sort(String seqToSort, boolean descending) {
+        char[] array = seqToSort.toCharArray();
+        if (descending == true) {
+            for (int j = 1; j < array.length; j++) {
+                char key = array[j];
+                int i = j - 1;
+                while (i >= 0 && array[i] < key) {
+                    array[i + 1] = array[i];
+                    i = i - 1;
+                }
+                array[i + 1] = key;
             }
-            A[i + 1] = key;
+        } else {
+            for (int j = 1; j < array.length; j++) {
+                char key = array[j];
+                int i = j - 1;
+                while (i < 0 && array[i] > key) {
+                    array[i + 1] = array[i];
+                    i = i - 1;
+                }
+                array[i + 1] = key;
+            }
         }
-
-        return new String(A);
+        return new String(array);
     }
-
-
-
 }
 
