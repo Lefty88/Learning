@@ -10,6 +10,14 @@ public class Tests {
         testSort("10", "10", true);
         testSort("101", "110", true);
         testSort("0000000001", "1000000000", true);
+        testSort("654321", "123456", false);
+        testSort("1234321", "1122334", false);
+        testSort("776655", "556677", false);
+        testSort("11", "11", false);
+        testSort("01", "01", false);
+        testSort("10", "01", false);
+        testSort("101", "011", false);
+        testSort("1000000000", "0000000001", false);
 
     }
 

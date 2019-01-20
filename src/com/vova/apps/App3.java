@@ -24,7 +24,7 @@ public class App3 {
      */
     public static String sort(String seqToSort, boolean descending) {
         char[] array = seqToSort.toCharArray();
-        if (descending == true) {
+        if (descending) {
             for (int j = 1; j < array.length; j++) {
                 char key = array[j];
                 int i = j - 1;
@@ -38,7 +38,7 @@ public class App3 {
             for (int j = 1; j < array.length; j++) {
                 char key = array[j];
                 int i = j - 1;
-                while (i < 0 && array[i] > key) {
+                while (i >= 0 && array[i] > key) {
                     array[i + 1] = array[i];
                     i = i - 1;
                 }
